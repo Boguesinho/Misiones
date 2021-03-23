@@ -62,12 +62,14 @@ namespace ServiciosCuentaUsuario
             this.idFotoCuentaUsuario = idFotoCuentaUsuario;
             Genero_idGenero = genero_idGenero;
         }
+        /*
         public Cuenta(int idCuenta, string nombreUsuario, int genero_idGenero)
         {
             this.idCuenta = idCuenta;
             this.nombreUsuario = nombreUsuario;
             Genero_idGenero = genero_idGenero;
         }
+        */
     }
 
     [DataContract]
@@ -79,6 +81,12 @@ namespace ServiciosCuentaUsuario
         string contrasena;
         [DataMember]
         int Cuenta_idCuenta;
+
+        public string getContrasena()
+        {
+            return contrasena;
+        }
+
 
         public Contrasena(int idContrasena, string contrasena, int cuenta_idCuenta)
         {
@@ -96,6 +104,11 @@ namespace ServiciosCuentaUsuario
         string correo;
         [DataMember]
         int Cuenta_idCuenta;
+
+        public string getCorreo()
+        {
+            return correo;
+        }
 
         public Correo(int idCorreo, string correo, int cuenta_idCuenta)
         {
@@ -115,6 +128,10 @@ namespace ServiciosCuentaUsuario
         [DataMember]
         int Cuenta_idCuenta;
 
+        public string getTelefono()
+        {
+            return telefono;
+        }
         public Telefono(int idTelefono, string telefono, int cuenta_idCuenta)
         {
             this.idTelefono = idTelefono;
@@ -130,6 +147,10 @@ namespace ServiciosCuentaUsuario
         [DataMember]
         string genero;
 
+        public string getGenero()
+        {
+            return genero;
+        }
         public Genero(int idGenero, string genero)
         {
             this.idGenero = idGenero;
