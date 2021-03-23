@@ -77,13 +77,13 @@ namespace ServiciosCuentaUsuario
             return retorno;
         }
 
-        public int RegistrarUsuario(string nombreUsuario, string correo, string contrasena, string telefono, int idFotoCuentaUsuario, int Genero_idGenero)
+        public int RegistrarUsuario(Cuenta cuenta, Contrasena contrasena, Correo correo, Telefono telefono)
         {
             int retorno = 0;
             try
             {
                 MySqlCommand comando = new MySqlCommand(string.Format(
-                "Insert into Cuenta (nombreUsuario,idFotoCuentaUsuario,Genero_idGenero, nombreUsuario, correo, contrasena, telefono) values ('{0}','{1}','{2}','{3}','{4}','{5}' )", nombreUsuario, idFotoCuentaUsuario, Genero_idGenero, nombreUsuario, correo, contrasena, telefono), Conexion.ObtenerConexion());
+                "Insert into Cuenta (nombreUsuario,idFotoCuentaUsuario,Genero_idGenero, nombreUsuario, correo, contrasena, telefono) values ('{0}','{1}','{2}','{3}','{4}','{5}' )", cuenta.getNombreUsuario, cuenta.getIdFotoCuentaUsuario, cuenta.getGenero_idGenero, cuenta.getNombreUsuario, , contrasena.getContrasena, telefono.getTelefono), Conexion.ObtenerConexion());
                 retorno = comando.ExecuteNonQuery();
 
             }
